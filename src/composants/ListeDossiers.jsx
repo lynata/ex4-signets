@@ -19,7 +19,6 @@ export default function ListeDossiers({utilisateur, etatDossiers}) {
         reponse.forEach(
           // ... et pour chaque doc dans la réponse on ajoute un objet dans tabDossiers
           doc => {
-            console.log("Le doc retourné par Firestore : ", doc);
             tabDossiers.push({id: doc.id, ...doc.data()})
           }
           // Remarquez que le 'id' ne fait pas partie des attributs de données des documents sur Firestore, et il faut l'extraire séparément avec la propriété 'id'. Remarquez aussi l'utilisation de l'opérateur de décomposition (spread operator (...))
