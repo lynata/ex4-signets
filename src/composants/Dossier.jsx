@@ -27,8 +27,11 @@ export default function Dossier({id, nom, couleur, datemodif, couverture}) {
           <SortIcon />
         </IconButton>
         <img src={
+          // si il ny a pas de lien, si le champs est vide
           couverture == "" ?
+          // on affiche limage pas defaut
           imgDefaut
+          // sinon on affiche l'img que la personne a choisi
           :
           couverture
           } alt={nom}/>
