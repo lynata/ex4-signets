@@ -33,10 +33,19 @@ export default function ListeDossiers({utilisateur, etatDossiers}) {
 
   return (
     <ul className="ListeDossiers">
-      {
+      { 
+        // si le dossier contient un document (n'est pas vide)
+        dossiers.length != 0 ?
+        
         dossiers.map( 
           dossier =>  <li key={dossier.id}><Dossier {...dossier} /></li>
         )
+        // si le dossier est vide
+        :
+        <div className="vide">
+          Votre liste de dossier est vide
+          <p>:(</p>
+        </div>
       }
     </ul>
   );
